@@ -1,0 +1,16 @@
+# Java / Spring Boot
+target/
+*.class
+.mvn/
+.gradle/
+build/
+
+# Angular / Node
+node_modules/
+.angular/
+dist/
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
