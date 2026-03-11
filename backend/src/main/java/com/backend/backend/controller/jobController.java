@@ -24,6 +24,7 @@ public class jobController {
 
     @PostMapping
     public jobApplication createJob(@RequestBody jobApplication job){
+        
         return jobService.saveJob(job);
     }
 
