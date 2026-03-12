@@ -1,0 +1,46 @@
+<div class="bg-white shadow rounded-xl p-6">
+  <h2 class="text-xl font-semibold mb-4">Job Applications</h2>
+
+  <table class="w-full">
+    <thead>
+      <tr class="text-left border-b">
+        <th class="py-2">Company</th>
+        <th>Position</th>
+        <th>Status</th>
+        <th>Date</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let job of jobs" class="border-b hover:bg-gray-50">
+        <td class="py-3">{{ job.companyName }}</td>
+
+        <td>{{ job.position }}</td>
+
+        <td>
+          <span
+            class="px-3 py-1 text-sm rounded-full"
+            [ngClass]="{
+              'bg-blue-100 text-blue-700': job.status === 'APPLIED',
+              'bg-yellow-100 text-yellow-700': job.status === 'INTERVIEW',
+              'bg-green-100 text-green-700': job.status === 'OFFER',
+              'bg-red-100 text-red-700': job.status === 'REJECTED',
+            }"
+          >
+            {{ job.status }}
+          </span>
+        </td>
+
+        <td>{{ job.applicationDate }}</td>
+
+        <td>
+          <!-- <button
+           (click)="delete(job.id)" 
+           class="text-red-500 hover:text-red-700">Delete</button> -->
+          <button class="text-red-500 hover:text-red-700">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

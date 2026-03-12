@@ -1,0 +1,18 @@
+<nav class="bg-white shadow-md">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-indigo-600">Job Tracker</h1>
+
+    <div class="flex gap-6">
+      <a routerLink="/dashboard" class="text-gray-600 hover:text-indigo-600"> Dashboard </a>
+
+      <a routerLink="/jobs" class="text-gray-600 hover:text-indigo-600"> Applications </a>
+      <!-- routerLink="/add" -->
+      <a
+        (click)="openDialog()"
+        class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700"
+      >
+        Add Job
+      </a>
+    </div>
+  </div>
+</nav>
