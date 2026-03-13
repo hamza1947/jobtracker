@@ -1,7 +1,9 @@
-<div class="bg-white p-8 rounded-xl shadow max-w-xl">
+<div
+  class="bg-white p-8 rounded-sm shadow max-w-xl flex flex-col max-h-[80vh] w-full overflow-hidden"
+>
   <h2 class="text-xl font-bold mb-6">Add Job Application</h2>
 
-  <form (ngSubmit)="submit()" class="space-y-4">
+  <form (ngSubmit)="submit()" class="flex-grow overflow-y-auto p-6 space-y-4">
     <!-- Company Name -->
     <mat-form-field appearance="outline" class="w-full">
       <mat-label>Company Name</mat-label>

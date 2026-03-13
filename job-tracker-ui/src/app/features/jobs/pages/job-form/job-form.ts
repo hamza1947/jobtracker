@@ -48,8 +48,10 @@ export class JobForm {
   ) {}
 
   submit() {
-    this.JobService.addJob(this.job).subscribe(() => {
-      this.router.navigate(['/jobs']);
-    });
+    // this.JobService.addJob(this.job).subscribe(() => {
+    //   this.router.navigate(['/jobs']);
+    // });
+    this.JobService.addJob(this.job);
+    this.router.navigate(['/jobs']);
   }
 }

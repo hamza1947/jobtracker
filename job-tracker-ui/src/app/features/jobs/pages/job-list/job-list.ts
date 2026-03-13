@@ -10,12 +10,12 @@ import { JobService } from '../../../../core/services/job.service';
 })
 export class JobList implements OnInit {
   // jobs: Job[] = this.JobService.jobsApplied();
-
-  private JobService = inject(JobService);
-  jobs: Job[] = this.JobService.jobsApplied();
+  jobs: Job[] = [];
+  JobService = inject(JobService);
 
   ngOnInit(): void {
     this.JobService.getJobs();
+    // this.jobs = this.JobService.jobsApplied();
   }
 
   // loadJobs() {

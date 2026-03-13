@@ -13,7 +13,7 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let job of jobs" class="border-b hover:bg-gray-50">
+      <tr *ngFor="let job of JobService.jobsApplied()" class="border-b hover:bg-gray-50">
         <td class="py-3">{{ job.companyName }}</td>
 
         <td>{{ job.position }}</td>

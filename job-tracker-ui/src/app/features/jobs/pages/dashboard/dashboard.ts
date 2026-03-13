@@ -15,13 +15,17 @@ export class Dashboard implements OnInit {
   rejected = 0;
 
   private JobService = inject(JobService);
-  jobs: Job[] = this.JobService.jobsApplied();
+  jobs: Job[] = [];
   ngOnInit(): void {
+    this.JobService.getJobs();
+    this.jobs = this.JobService.jobsApplied();
+
     this.loadJobs();
   }
 
   loadJobs() {
     this.total = this.jobs.length;
+    console.log('Loading jobs...', this.jobs.length);
 
     this.interviews = this.jobs.filter((job: Job) => job.status === 'INTERVIEW').length;
 

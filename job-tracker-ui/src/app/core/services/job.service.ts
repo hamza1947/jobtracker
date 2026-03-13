@@ -13,12 +13,17 @@ export class JobService {
   getJobs() {
     //   return this.http.get<Job[]>(this.api);
     this.http.get<Job[]>(this.api).subscribe((data) => {
+      console.log('Fetched jobs:', data);
       this.jobsApplied.set(data); // This updates EVERYTHING listening to it
     });
   }
 
   addJob(job: Job) {
-    return this.http.post<Job>(this.api, job);
+    //   return this.http.post<Job>(this.api, job);
+    this.http.post<Job>(this.api, job).subscribe((newJob) => {
+      console.log('New job added:', newJob);
+      this.jobsApplied.update((jobs) => [...jobs, newJob]);
+    });
   }
 
   deleteJob(id: number) {
