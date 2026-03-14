@@ -1,10 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Job } from '../../../../core/models/job.model';
 import { JobService } from '../../../../core/services/job.service';
+import { MatFormField } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [MatFormField],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
@@ -19,7 +20,6 @@ export class Dashboard implements OnInit {
   ngOnInit(): void {
     this.JobService.getJobs();
     this.jobs = this.JobService.jobsApplied();
-
     this.loadJobs();
   }
 
